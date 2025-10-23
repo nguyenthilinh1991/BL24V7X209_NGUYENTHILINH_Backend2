@@ -61,7 +61,7 @@ class ContactService {
             { $set: update },
             { returnDocument: 'after' }
         );
-        return result.value;
+        return result;
     }
 
     //contactService.delete(id) tìm kiếm tài liệu theo Id và xóa tài liệu này.
@@ -69,7 +69,7 @@ class ContactService {
         const result = await this.Contact.findOneAndDelete({
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
         });
-        return result;
+        return result.value;
     }
 
     //contactService.deleteMany() xóa tất các các đối tượng trong collection.
