@@ -69,7 +69,7 @@ class ContactService {
         const result = await this.Contact.findOneAndDelete({
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
         });
-        return result.value;
+        return result;
     }
 
     //contactService.deleteMany() xóa tất các các đối tượng trong collection.
